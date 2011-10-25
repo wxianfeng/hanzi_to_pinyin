@@ -17,10 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "hanzi_to_pinyin"
   gem.homepage = "http://github.com/wxianfeng/hanzi_to_pinyin"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "wangxianfeng@netposa.com"
-  gem.authors = ["wangxianfeng"]
+  gem.summary = %Q{chinese hanzi to pinyin}
+  gem.description = %Q{chinese hanzi to pinyin}
+  gem.email = "wang.fl1429@gmail.com"
+  gem.authors = ["wxianfeng"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -42,7 +42,7 @@ end
 
 task :default => :test
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
