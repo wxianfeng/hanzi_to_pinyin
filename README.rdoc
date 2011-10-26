@@ -1,19 +1,24 @@
 = hanzi_to_pinyin
 
-Description goes here.
+translate chinese to pinyin , just fetch first letter
 
-== Contributing to hanzi_to_pinyin
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+rails3 
+
+== Install
+
+gem 'hanzi_to_pinyin' , '0.1.0'
+or latest develop version
+gem 'hanzi_to_pinyin' , git: 'git://github.com/wxianfeng/hanzi_to_pinyin.git'
+
+= Usage
+
+HanziToPinyin.hanzi_to_pinyin("中华人民共和国") => "zhrmghg"
+HanziToPinyin.hanzi_to_pinyin("喜欢Ruby") => "xhruby"
+HanziToPinyin.is_hanzi?("你") => true
+HanziToPinyin.is_hanzi?("a") => false
 
 == Copyright
 
-Copyright (c) 2011 wangxianfeng. See LICENSE.txt for
+Copyright (c) 2011 wxianfeng. See LICENSE.txt for
 further details.
 
