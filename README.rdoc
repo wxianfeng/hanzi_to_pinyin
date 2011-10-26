@@ -6,16 +6,16 @@ translate chinese to pinyin , just fetch first letter
 
 rails3 
 
-	$ gem 'hanzi_to_pinyin' , '0.1.0'
-	or latest develop version
-	$ gem 'hanzi_to_pinyin' , git: 'git://github.com/wxianfeng/hanzi_to_pinyin.git'
+  $ gem 'hanzi_to_pinyin' , '0.1.0'
+or latest develop version
+  $ gem 'hanzi_to_pinyin' , git: 'git://github.com/wxianfeng/hanzi_to_pinyin.git'
 
 == Usage
 
-	$ HanziToPinyin.hanzi_to_pinyin("中华人民共和国") => "zhrmghg"
-	$ HanziToPinyin.hanzi_to_pinyin("喜欢Ruby") => "xhruby"
-	$ HanziToPinyin.is_hanzi?("你") => true
-	$ HanziToPinyin.is_hanzi?("a") => false
+  $ HanziToPinyin.hanzi_to_pinyin("中华人民共和国") => "zhrmghg"
+  $ HanziToPinyin.hanzi_to_pinyin("喜欢Ruby") => "xhruby"
+  $ HanziToPinyin.is_hanzi?("你") => true
+  $ HanziToPinyin.is_hanzi?("a") => false
 
 == Copyright
 
