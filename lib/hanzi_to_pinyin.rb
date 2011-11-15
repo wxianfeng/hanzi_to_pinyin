@@ -2,6 +2,8 @@
 require "json"
 
 class HanziToPinyin
+  
+  VERSION = IO.read File.expand_path("../../VERSION",__FILE__)
 
   # Unicode中汉字开始点
   @@hanzi_unicode_start=19968

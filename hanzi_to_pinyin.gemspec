@@ -2,13 +2,13 @@
 
 Gem::Specification.new do |s|
   s.name        = "hanzi_to_pinyin"
-  s.version     = "0.2.0"
+  s.version     = "0.3.0"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["wxianfeng"]
   s.email       = ["wang.fl1429@gmail.com"]
   s.homepage    = "http://github.com/wxianfeng/hanzi_to_pinyin"
-  s.summary     = "chinese hanzi to pinyin , just fetch first letter."
-  s.description = "chinese hanzi to pinyin , just fetch first letter, written in Ruby."
+  s.summary     = "chinese hanzi to pinyin , fetch first letter OR full pinyin"
+  s.description = "chinese hanzi to pinyin , fetch first letter OR full pinyin, written in Ruby."
 
   s.required_rubygems_version = ">= 1.3.6"
 

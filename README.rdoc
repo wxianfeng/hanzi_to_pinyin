@@ -25,6 +25,9 @@ or freeze ref version
   $ HanziToPinyin.hanzi_2_py("我们") => "wo;men"
   $ HanziToPinyin.hanzi_2_py("查理Smith") => "cha,zha;li"
 
+== Test
+  $ rake spec
+
 == Copyright
 
 Copyright (c) 2011 wxianfeng. See LICENSE.txt for
