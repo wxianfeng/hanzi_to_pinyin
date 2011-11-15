@@ -1,6 +1,6 @@
 = hanzi_to_pinyin
 
-translate chinese to pinyin , just fetch first letter
+translate chinese to pinyin , fetch first letter OR full pinyin
 
 == Install
 
@@ -20,6 +20,10 @@ or freeze ref version
   $ HanziToPinyin.hanzi_2_pinyin("喜欢Ruby") => "xhruby"
   $ HanziToPinyin.is_hanzi?("你") => true
   $ HanziToPinyin.is_hanzi?("a") => false
+
+  # 只处理汉字 多音字,分隔 字字之间;分隔
+  $ HanziToPinyin.hanzi_2_py("我们") => "wo;men"
+  $ HanziToPinyin.hanzi_2_py("查理Smith") => "cha,zha;li"
 
 == Copyright
 

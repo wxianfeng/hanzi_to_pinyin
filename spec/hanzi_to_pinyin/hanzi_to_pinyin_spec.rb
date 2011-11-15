@@ -18,6 +18,11 @@ describe HanziToPinyin do
     HanziToPinyin.hanzi_to_pinyin("北京东方网力科技股份有限公司").should == "bjdfwlkjgfyxgs"
   end
   
+  it "hanzi_2_py method" do
+    HanziToPinyin.hanzi_2_py("我们").should == "wo;men"
+    HanziToPinyin.hanzi_2_py("查理Smith").should == "cha,zha;li"
+  end
+  
   it "是否是汉字" do
     HanziToPinyin.is_hanzi?("我".ord).should be_true
     HanziToPinyin.is_hanzi?("a".ord).should be_false
