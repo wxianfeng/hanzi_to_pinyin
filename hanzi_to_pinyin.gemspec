@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.post_install_message = <<-POST_INSTALL_MESSAGE
-  hanzi_to_pinyin is a tool for chinese hanzi to pinyin ,just fetch first letter , writen in Ruby.
+  hanzi_to_pinyin is a tool for chinese hanzi to pinyin ,fetch first letter OR full pinyin, writen in Ruby.
   
   http://github.com/wxianfeng/hanzi_to_pinyin
 
