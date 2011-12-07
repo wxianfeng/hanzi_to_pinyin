@@ -27,6 +27,8 @@ or freeze ref version
 
 == Test
   $ rake spec
+or spec one case
+  $ rspec spec/hanzi_to_pinyin/hanzi_to_pinyin_spec.rb -l 21
 
 == Copyright
 
