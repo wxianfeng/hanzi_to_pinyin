@@ -22,6 +22,7 @@ describe HanziToPinyin do
     HanziToPinyin.hanzi_2_py("我们").should == "wo;men"
     HanziToPinyin.hanzi_2_py("查理Smith").should == "cha,zha;li"
     HanziToPinyin.hanzi_2_py("你你").should == "ni;ni"
+    HanziToPinyin.hanzi_2_py("郭轶").should == "guo;yi,die"
   end
   
   it "是否是汉字" do

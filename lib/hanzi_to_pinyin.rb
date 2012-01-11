@@ -36,6 +36,9 @@ class HanziToPinyin
   
   ##
   # 只处理汉字 多音字,分隔 字字之间;分隔
+  # 查理Smith => "cha,zha;li"
+  # 郭轶 => "guo;yi,die"
+  # 我们 => "wo;men"
   def self.hanzi_2_py(hanzi)
     hanzi = hanzi.force_encoding("utf-8")
     str = ''
@@ -46,9 +49,13 @@ class HanziToPinyin
           str << "#{values.join(',')}"
         else
           if str.length == 0
-            str << "#{values.join}"
+            str << "#{values.join};" 
           else
-            str << ";#{values.join}"
+            if str[-1] == ";"
+              str << "#{values.join}"
+            else
+              str << ";#{values.join}"
+            end
           end
         end
       end
