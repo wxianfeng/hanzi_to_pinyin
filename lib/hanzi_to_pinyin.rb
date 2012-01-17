@@ -39,6 +39,7 @@ class HanziToPinyin
   # 查理Smith => "cha,zha;li"
   # 郭轶 => "guo;yi,die"
   # 我们 => "wo;men"
+  # 宗志强 => "zong;zhi;qiang,jiang"
   def self.hanzi_2_py(hanzi)
     hanzi = hanzi.force_encoding("utf-8")
     str = ''
@@ -46,10 +47,18 @@ class HanziToPinyin
       if is_hanzi?(hz.ord)
         values = @@py[hz]
         if values.size > 1
-          str << "#{values.join(',')}"
+          if str.length == 0
+            str << "#{values.join(',')}"
+          else
+            if str[-1] == ";"
+              str << "#{values.join(',')}"
+            else
+              str << ";#{values.join(',')}"
+            end
+          end
         else
           if str.length == 0
-            str << "#{values.join};" 
+            str << "#{values.join};"
           else
             if str[-1] == ";"
               str << "#{values.join}"
