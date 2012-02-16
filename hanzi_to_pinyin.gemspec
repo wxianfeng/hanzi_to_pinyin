@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "hanzi_to_pinyin"
-  s.version     = "0.5.0"
+  s.version     = "0.6.0"
   # s.version     = HanziToPinyin::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["wxianfeng"]
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency("rspec")
 
-  #  s.files         = `git ls-files`.split("\n")
+  s.files         = Dir['README.rdoc', 'VERSION', 'LICENSE.txt', 'Rakefile', 'lib/**/*']
   s.test_files    = `git ls-files -- {spec}/*`.split("\n")
   # s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
