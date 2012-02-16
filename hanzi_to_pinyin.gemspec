@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "hanzi_to_pinyin"
-  s.version     = "0.4.0"
+  s.version     = "0.5.0"
   # s.version     = HanziToPinyin::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["wxianfeng"]

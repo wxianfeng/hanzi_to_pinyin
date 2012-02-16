@@ -6,7 +6,7 @@ translate chinese to pinyin , fetch first letter OR full pinyin
 
 rails3 
 
-  $ gem 'hanzi_to_pinyin' , '0.4.0'
+  $ gem 'hanzi_to_pinyin' , '0.5.0'
 or latest develop version
   $ gem 'hanzi_to_pinyin' , git: 'git://github.com/wxianfeng/hanzi_to_pinyin.git'
 or freeze ref version
@@ -24,6 +24,7 @@ or freeze ref version
   # 只处理汉字 多音字,分隔 字字之间;分隔
   $ HanziToPinyin.hanzi_2_py("我们") => "wo;men"
   $ HanziToPinyin.hanzi_2_py("查理Smith") => "cha,zha;li"
+  $ HanziToPinyin.hanzi_2_py("测试1") => "ce;shi;1"
 
 == Test
   $ rake spec
