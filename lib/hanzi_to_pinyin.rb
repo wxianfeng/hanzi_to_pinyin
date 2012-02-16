@@ -41,7 +41,7 @@ class HanziToPinyin
   end
   
   ##
-  # 只处理汉字 多音字,分隔 字字之间;分隔
+  # 只处理汉字和数字 多音字,分隔 字字之间;分隔
   # 查理Smith => "cha,zha;li"
   # 郭轶 => "guo;yi,die"
   # 我们 => "wo;men"

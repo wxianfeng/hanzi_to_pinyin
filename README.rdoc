@@ -21,7 +21,7 @@ or freeze ref version
   $ HanziToPinyin.is_hanzi?("你") => true
   $ HanziToPinyin.is_hanzi?("a") => false
 
-  # 只处理汉字 多音字,分隔 字字之间;分隔
+  # 只处理汉字和数字 多音字,分隔 字字之间;分隔
   $ HanziToPinyin.hanzi_2_py("我们") => "wo;men"
   $ HanziToPinyin.hanzi_2_py("查理Smith") => "cha,zha;li"
   $ HanziToPinyin.hanzi_2_py("测试1") => "ce;shi;1"
