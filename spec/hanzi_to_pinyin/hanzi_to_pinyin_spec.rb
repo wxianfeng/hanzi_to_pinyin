@@ -24,6 +24,9 @@ describe HanziToPinyin do
     HanziToPinyin.hanzi_2_py("你你").should == "ni;ni"
     HanziToPinyin.hanzi_2_py("郭轶").should == "guo;yi,die"
     HanziToPinyin.hanzi_2_py("宗志强").should == "zong;zhi;qiang,jiang"
+    HanziToPinyin.hanzi_2_py("测试1").should == "ce;shi;1"
+    HanziToPinyin.hanzi_2_py("2测试").should == "2;ce;shi"
+    HanziToPinyin.hanzi_2_py("测3试").should == "ce;3;shi"
   end
   
   it "是否是汉字" do
