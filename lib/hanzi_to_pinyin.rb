@@ -14,6 +14,9 @@ class HanziToPinyin
   @@number_unicode_start = 48
   @@number_unicode_end = 57
   
+  # 下划线(10进制)
+  @@underline = 95
+  
   # 汉字 unicode 编码(16进制)
   @@unicode = YAML.load(IO.read File.expand_path("../data/unicode_to_pinyin.yml",__FILE__))
   @@py = ::JSON.parse(IO.read File.expand_path("../data/hz2py.json",__FILE__))
@@ -41,16 +44,16 @@ class HanziToPinyin
   end
   
   ##
-  # 只处理汉字和数字 多音字,分隔 字字之间;分隔
-  # 查理Smith => "cha,zha;li"
-  # 郭轶 => "guo;yi,die"
-  # 我们 => "wo;men"
-  # 宗志强 => "zong;zhi;qiang,jiang"
+  # 只处理汉字和数字和_    多音字,分隔 字字之间;分隔
+  #   查理Smith => "cha,zha;li"
+  #   郭轶 => "guo;yi,die"
+  #   我们 => "wo;men"
+  #   宗志强 => "zong;zhi;qiang,jiang"
   def self.hanzi_2_py(hanzi)
     hanzi = hanzi.force_encoding("utf-8")
     str = ''
     hanzi.each_char do |hz|
-      if is_number?(hz.ord)
+      if is_number?(hz.ord) or is_underline?(hz.ord)
         if str.length == 0
           str << hz.chr
         else
@@ -97,6 +100,10 @@ class HanziToPinyin
   
   def self.is_number?(number_codepoint)
     number_codepoint >= @@number_unicode_start && number_codepoint <= @@number_unicode_end
+  end
+  
+  def self.is_underline?(underline_codepoint)
+    underline_codepoint == @@underline
   end
     
 end
