@@ -6,7 +6,7 @@ translate chinese to pinyin , fetch first letter OR full pinyin
 
 rails3
 
-  $ gem 'hanzi_to_pinyin' , '0.6.0' , require: 'hanzi_to_pinyin'
+  $ gem 'hanzi_to_pinyin' , '0.6.1' , require: 'hanzi_to_pinyin'
 or latest develop version
   $ gem 'hanzi_to_pinyin' , git: 'git://github.com/wxianfeng/hanzi_to_pinyin.git'
 or freeze ref version
@@ -43,4 +43,3 @@ or spec one case
 
 Copyright (c) 2011 wxianfeng. See LICENSE.txt for
 further details.
-
