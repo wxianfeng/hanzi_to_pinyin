@@ -10,9 +10,8 @@ Gem::Specification.new do |s|
   s.description = "chinese hanzi to pinyin , fetch first letter OR full pinyin, written in Ruby."
 
   s.required_rubygems_version = ">= 1.3.6"
-
-  # s.add_dependency("some_gem")
-
+  s.add_dependency("json")
+  s.add_dependency("yamler")
   s.add_development_dependency("rspec")
 
   s.files         = Dir['README.rdoc', 'VERSION', 'LICENSE.txt', 'Rakefile', 'lib/**/*']
