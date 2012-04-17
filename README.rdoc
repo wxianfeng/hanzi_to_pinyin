@@ -27,12 +27,14 @@ or freeze ref version
   $ HanziToPinyin.hanzi_2_py("查理Smith") => "cha,zha;li"
   $ HanziToPinyin.hanzi_2_py("测试1") => "ce;shi;1"
   $ HanziToPinyin.hanzi_2_py("测_试") => "ce;_;shi"
+  $ HanziToPinyin.hanzi_2_py("测-试").should == "ce;-;shi"
 
   $ HanziToPinyin.is_number?("1".ord) => true
   $ HanziToPinyin.is_number?("a".ord) => false
 
   $ HanziToPinyin.is_underline?("_".ord).should be_true
   $ HanziToPinyin.is_underline?("豆豆").should be_false
+  $ HanziToPinyin.is_dash?("-".ord).should be_true
 
 == Test
   $ rake spec

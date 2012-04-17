@@ -28,6 +28,7 @@ describe HanziToPinyin do
     HanziToPinyin.hanzi_2_py("2测试").should == "2;ce;shi"
     HanziToPinyin.hanzi_2_py("测3试").should == "ce;3;shi"
     HanziToPinyin.hanzi_2_py("测_试").should == "ce;_;shi"
+    HanziToPinyin.hanzi_2_py("测-试").should == "ce;-;shi"
   end
   
   it "是否是汉字" do
@@ -39,12 +40,17 @@ describe HanziToPinyin do
   
   it "是否是数字" do
     HanziToPinyin.is_number?("1".ord).should be_true
-    HanziToPinyin.is_number?("wxianfeng".ord).should be_false
+    HanziToPinyin.is_number?("w".ord).should be_false
   end
   
   it "是否是下划线"  do
     HanziToPinyin.is_underline?("_".ord).should be_true
-    HanziToPinyin.is_underline?("豆豆").should be_false
+    HanziToPinyin.is_underline?("豆".ord).should be_false
+  end
+  
+  it "是否是横线" do
+    HanziToPinyin.is_dash?("-".ord).should be_true
+    HanziToPinyin.is_dash?("_".ord).should be_false
   end
   
 end
