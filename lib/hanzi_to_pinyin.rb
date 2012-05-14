@@ -11,6 +11,12 @@ class HanziToPinyin
   # Unicode中汉字的结束点
   @@hanzi_unicode_end = 40869
   
+  # 字母(10进制)
+  @@letter_upcase_start = 65
+  @@letter_upcase_end = 90
+  @@letter_downcase_start = 97
+  @@letter_downcase_end = 122
+  
   # 数字(10进制)
   @@number_unicode_start = 48
   @@number_unicode_end = 57
@@ -48,54 +54,48 @@ class HanziToPinyin
   end
   
   ##
-  # 只处理汉字和数字和_,- 多音字,分隔 字字之间;分隔
-  #   查理Smith => "cha,zha;li"
-  #   郭轶 => "guo;yi,die"
-  #   我们 => "wo;men"
-  #   宗志强 => "zong;zhi;qiang,jiang"
+  # 多音字,分隔 字字之间;分隔,字母丢弃
+  #  查理Smith => "cha,zha;li"
+  #  郭轶 => "guo;yi,die"
+  #  我们 => "wo;men"
+  #  宗志强 => "zong;zhi;qiang,jiang"
   def self.hanzi_2_py(hanzi)
     hanzi = hanzi.force_encoding("utf-8")
-    str = ''
+    @str = ''
     hanzi.each_char do |hz|
-      if is_number?(hz.ord) or is_underline?(hz.ord) or is_dash?(hz.ord)
-        if str.length == 0
-          str << hz.chr
-        else
-          if str[-1] == ";"
-            str << hz.chr
-          else
-            str << ";#{hz.chr}"
-          end
-        end
-      elsif is_hanzi?(hz.ord)
+      if is_hanzi?(hz.ord)
         values = @@py[hz]
-        if values.size > 1
-          if str.length == 0
-            str << "#{values.join(',')}"
-          else
-            if str[-1] == ";"
-              str << "#{values.join(',')}"
-            else
-              str << ";#{values.join(',')}"
-            end
-          end
+        append(values)
+      elsif is_letter?(hz.ord)
+        next
+      else
+        if @str.length == 0
+          @str << hz.chr
         else
-          if str.length == 0
-            str << "#{values.join};"
+          if @str[-1] == ";"
+            @str << hz.chr
           else
-            if str[-1] == ";"
-              str << "#{values.join}"
-            else
-              str << ";#{values.join}"
-            end
+            @str << ";#{hz.chr}"
           end
         end
       end
     end
-    str
+    @str
   end
   class << self
     alias_method :hanzi_to_py , :hanzi_2_py
+  end
+  
+  def self.append(values)
+    if @str.length == 0
+      @str << "#{values.join(',')}"
+    else
+      if @str[-1] == ";"
+        @str << "#{values.join(',')}"
+      else
+        @str << ";#{values.join(',')}"
+      end
+    end
   end
 
   def self.is_hanzi?(hanzi_codepoint)
@@ -112,6 +112,10 @@ class HanziToPinyin
   
   def self.is_dash?(codepoint)
     codepoint == @@dash
+  end
+  
+  def self.is_letter?(codepoint)
+    codepoint >= @@letter_upcase_start && codepoint <= @@letter_upcase_end  or codepoint >= @@letter_downcase_start && codepoint <= @@letter_downcase_end
   end
     
 end

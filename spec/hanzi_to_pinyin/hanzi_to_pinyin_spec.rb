@@ -29,6 +29,7 @@ describe HanziToPinyin do
     HanziToPinyin.hanzi_2_py("测3试").should == "ce;3;shi"
     HanziToPinyin.hanzi_2_py("测_试").should == "ce;_;shi"
     HanziToPinyin.hanzi_2_py("测-试").should == "ce;-;shi"
+    HanziToPinyin.hanzi_2_py("金龙—技术支持").should == "jin;long,mang;—;ji;zhu,shu;zhi;chi"
   end
   
   it "是否是汉字" do
