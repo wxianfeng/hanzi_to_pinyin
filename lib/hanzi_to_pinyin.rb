@@ -60,7 +60,7 @@ class HanziToPinyin
   #  我们 => "wo;men"
   #  宗志强 => "zong;zhi;qiang,jiang"
   def self.hanzi_2_py(hanzi)
-    hanzi = hanzi.force_encoding("utf-8")
+    hanzi = hanzi.to_s.force_encoding("utf-8")
     @str = ''
     hanzi.each_char do |hz|
       if is_hanzi?(hz.ord)

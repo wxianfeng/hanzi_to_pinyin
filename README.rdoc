@@ -28,6 +28,7 @@ or freeze ref version
   $ HanziToPinyin.hanzi_2_py("测试1") => "ce;shi;1"
   $ HanziToPinyin.hanzi_2_py("测_试") => "ce;_;shi"
   $ HanziToPinyin.hanzi_2_py("测-试").should == "ce;-;shi"
+  $ HanziToPinyin.hanzi_2_py(2).should == "2"
 
   $ HanziToPinyin.is_number?("1".ord) => true
   $ HanziToPinyin.is_number?("a".ord) => false
