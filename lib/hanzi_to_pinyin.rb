@@ -55,30 +55,36 @@ class HanziToPinyin
   
   ##
   # 多音字,分隔 字字之间;分隔,字母丢弃
-  #  查理Smith => "cha,zha;li"
+  #  查理Smith => "cha,zha;li;Smith"
   #  郭轶 => "guo;yi,die"
   #  我们 => "wo;men"
   #  宗志强 => "zong;zhi;qiang,jiang"
   def self.hanzi_2_py(hanzi)
     hanzi = hanzi.to_s.force_encoding("utf-8")
     @str = ''
+    index = 0
     hanzi.each_char do |hz|
       if is_hanzi?(hz.ord)
         values = @@py[hz]
         append(values)
-      elsif is_letter?(hz.ord)
-        next
       else
         if @str.length == 0
           @str << hz.chr
         else
           if @str[-1] == ";"
             @str << hz.chr
+          elsif @str[-1] =~ /[a-z]/i
+            if is_hanzi?(hanzi[index-1].ord)
+              @str << ";#{hz.chr}"
+            else
+              @str << hz.chr
+            end
           else
             @str << ";#{hz.chr}"
           end
         end
       end
+      index += 1
     end
     @str
   end

@@ -20,7 +20,8 @@ describe HanziToPinyin do
   
   it "hanzi_2_py method" do
     HanziToPinyin.hanzi_2_py("我们").should == "wo;men"
-    HanziToPinyin.hanzi_2_py("查理Smith").should == "cha,zha;li"
+    HanziToPinyin.hanzi_2_py("yyf").should == "yyf"
+    HanziToPinyin.hanzi_2_py("查理Smith").should == "cha,zha;li;Smith"
     HanziToPinyin.hanzi_2_py("你你").should == "ni;ni"
     HanziToPinyin.hanzi_2_py("郭轶").should == "guo;yi,die"
     HanziToPinyin.hanzi_2_py("宗志强").should == "zong;zhi;qiang,jiang"
