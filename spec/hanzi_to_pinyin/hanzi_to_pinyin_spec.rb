@@ -71,4 +71,9 @@ describe HanziToPinyin do
     HanziToPinyin.hanzi_2_py("女人").should == "nÜ;ren" 
     HanziToPinyin.hanzi_2_py("研发中心").should == "yan;fa;zhong;xin"
   end
+
+  it "汉字转化为安全的 url" do
+    HanziToPinyin.hanzi_to_url("双11活动").should == "shuang-1-1-huo-dong"
+    HanziToPinyin.hanzi_to_url("双12活动&name=xxx").should == "shuang-1-2-huo-dong-%26-n-a-m-e-%3D-x-x-x"
+  end
 end

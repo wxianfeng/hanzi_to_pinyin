@@ -50,7 +50,7 @@ class HanziToPinyin
     u_str
   end
   class << self
-    alias_method :hanzi_to_pinyin , :hanzi_2_pinyin
+    alias_method :hanzi_to_pinyin, :hanzi_2_pinyin
   end
   
   ##
@@ -89,7 +89,26 @@ class HanziToPinyin
     @str
   end
   class << self
-    alias_method :hanzi_to_py , :hanzi_2_py
+    alias_method :hanzi_to_py, :hanzi_2_py
+  end
+
+  ##
+  # 汉字转化为安全的 url
+  def self.hanzi_2_url(hanzi)
+    hanzi = hanzi.to_s.force_encoding("utf-8")
+    arr = []
+    hanzi.each_char do |hz|
+      if is_hanzi?(hz.ord)
+        value = @@py[hz].first
+      else
+        value = hz.chr
+      end
+      arr << value
+    end
+    CGI.escape arr.join('-')
+  end
+  class << self
+    alias_method :hanzi_to_url, :hanzi_2_url
   end
   
   def self.append(values)
