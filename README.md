@@ -1,19 +1,16 @@
-= hanzi_to_pinyin
+hanzi_to_pinyin
+==
 
 translate chinese to pinyin, fetch first letter OR full pinyin
 
-== Install
+## Install
 
-rails3
+    $ gem 'hanzi_to_pinyin', '0.9.0', require: 'hanzi_to_pinyin'
 
-  $ gem 'hanzi_to_pinyin', '0.9.0', require: 'hanzi_to_pinyin'
-or latest develop version
-  $ gem 'hanzi_to_pinyin', git: 'git://github.com/wxianfeng/hanzi_to_pinyin.git'
-or freeze ref version
-  $ gem 'hanzi_to_pinyin', git: 'git://github.com/wxianfeng/hanzi_to_pinyin.git', ref: 5fa43b0
 
-== Usage
+## Usage
 
+```ruby
   $ HanziToPinyin.hanzi_to_pinyin("中华人民共和国") => "zhrmghg"
   $ HanziToPinyin.hanzi_2_pinyin("中华人民共和国") => "zhrmghg"
   $ HanziToPinyin.hanzi_to_pinyin("喜欢Ruby") => "xhruby"
@@ -37,13 +34,16 @@ or freeze ref version
   $ HanziToPinyin.is_underline?("_".ord) => true
   $ HanziToPinyin.is_underline?("豆豆") => false
   $ HanziToPinyin.is_dash?("-".ord) => true
+```
 
-== Test
-  $ rake spec
+## Test
+  
+    $ rake spec
+    
 or spec one case
   $ rspec spec/hanzi_to_pinyin/hanzi_to_pinyin_spec.rb -l 21
 
-== Copyright
+## Copyright
 
 Copyright (c) 2011 wxianfeng. See LICENSE.txt for
 further details.
