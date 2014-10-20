@@ -54,7 +54,7 @@ class HanziToPinyin
   end
   
   ##
-  # 多音字,分隔 字字之间;分隔,字母丢弃
+  # 多音字,分隔 字字之间;分隔,字母原样保留
   #  查理Smith => "cha,zha;li;Smith"
   #  郭轶 => "guo;yi,die"
   #  我们 => "wo;men"
@@ -121,7 +121,7 @@ class HanziToPinyin
   end
   
   def self.is_letter?(codepoint)
-    codepoint >= @@letter_upcase_start && codepoint <= @@letter_upcase_end  or codepoint >= @@letter_downcase_start && codepoint <= @@letter_downcase_end
+    codepoint >= @@letter_upcase_start && codepoint <= @@letter_upcase_end or codepoint >= @@letter_downcase_start && codepoint <= @@letter_downcase_end
   end
     
 end
