@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name        = "hanzi_to_pinyin"
-  s.version     = "0.9.1"
+  s.version     = "1.0.0"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["wxianfeng"]
   s.email       = ["wang.fl1429@gmail.com"]
