@@ -1,6 +1,7 @@
 # encoding:utf-8
 require 'json'
 require 'yaml'
+require 'cgi'
 
 class HanziToPinyin
   
@@ -105,7 +106,7 @@ class HanziToPinyin
       end
       arr << value
     end
-    CGI.escape arr.join('-')
+    ::CGI.escape arr.join('-')
   end
   class << self
     alias_method :hanzi_to_url, :hanzi_2_url

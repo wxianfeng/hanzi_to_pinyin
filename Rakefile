@@ -10,6 +10,13 @@ require "rspec/core/rake_task"
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 require "hanzi_to_pinyin"
 
+module TempFixForRakeLastComment
+  def last_comment
+    last_description
+  end 
+end
+Rake::Application.send :include, TempFixForRakeLastComment
+
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
