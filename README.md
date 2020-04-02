@@ -1,3 +1,5 @@
+English User See: [README.EN.md](./README.EN.md)
+
 hanzi_to_pinyin
 ==
 * 获取汉字首字母
@@ -6,8 +8,11 @@ hanzi_to_pinyin
 
 ## 安装
 ruby version <= 2.1.0
+
     $ gem 'hanzi_to_pinyin', '1.0.0', require: 'hanzi_to_pinyin'
+
 ruby version >=2.2.0
+
     $ gem 'hanzi_to_pinyin', require: 'hanzi_to_pinyin'
 
 ## 使用
@@ -59,7 +64,7 @@ ruby version >=2.2.0
 
 ## ChangeLog
 ## 1.0.0
-  * ruby < 2.1.0
+  * ruby 版本 < 2.1.0 使用
 
 ## 2.0.0
   * 升级 Rake 版本解决 Rake 安全漏洞问题
