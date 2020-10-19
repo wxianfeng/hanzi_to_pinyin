@@ -4,6 +4,7 @@ require "spec_helper"
 describe HanziToPinyin do
   it "hanzi_2_pinyin method" do
     HanziToPinyin.hanzi_2_pinyin("我们").should == "wm"
+    HanziToPinyin.hanzi_2_pinyin("嗯").should == "e"
     HanziToPinyin.hanzi_2_pinyin("北京东方网力科技股份有限公司").should == "bjdfwlkjgfyxgs"
     HanziToPinyin.hanzi_2_pinyin("_").should == "_"
     HanziToPinyin.hanzi_2_pinyin("1").should == "1"

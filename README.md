@@ -77,6 +77,9 @@ ruby version >=2.2.0
   ```
   * 支持 Ruby >= 2.2.0
 
+## 2.0.1
+  * 修复"嗯"转化报错
+
 ## 版权
 
 Copyright (c) 2011 wxianfeng. See LICENSE.txt for further details.
