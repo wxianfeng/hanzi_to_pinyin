@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
 
   Enjoy!
 
-     wxianfeng (wang.fl1429@gmail.com)
+    wxianfeng (522096432@qq.com)
 
   POST_INSTALL_MESSAGE
 end
